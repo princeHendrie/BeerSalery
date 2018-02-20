@@ -15,6 +15,14 @@
 		078A0751203B3B3800565C22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A074F203B3B3800565C22 /* LaunchScreen.storyboard */; };
 		078A075C203B3B3800565C22 /* BeerSaleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A075B203B3B3800565C22 /* BeerSaleryTests.swift */; };
 		078A0767203B3B3800565C22 /* BeerSaleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A0766203B3B3800565C22 /* BeerSaleryUITests.swift */; };
+		07C0DCEF203BBEC900272013 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DCEE203BBEC900272013 /* Beer.swift */; };
+		07C0DCF1203BDB3700272013 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DCF0203BDB3700272013 /* SwiftyJSON.swift */; };
+		07C0DCF3203BE13400272013 /* FirstViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DCF2203BE13400272013 /* FirstViewTableViewCell.swift */; };
+		07C0DCF5203BF99E00272013 /* FirstViewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DCF4203BF99E00272013 /* FirstViewDetailViewController.swift */; };
+		07C0DCFF203C1F0C00272013 /* DotActivityIndicatorParms.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DCFB203C1F0B00272013 /* DotActivityIndicatorParms.m */; };
+		07C0DD00203C1F0C00272013 /* DotActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DCFD203C1F0C00272013 /* DotActivityIndicatorView.m */; };
+		07C0DD02203C322A00272013 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C0DD01203C322A00272013 /* SweetAlert.swift */; };
+		5BC02740587DC88DFE0F7221 /* Pods_BeerSalery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF90ECE7EA4CFE1A47C1707 /* Pods_BeerSalery.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,19 @@
 		078A0762203B3B3800565C22 /* BeerSaleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerSaleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A0766203B3B3800565C22 /* BeerSaleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerSaleryUITests.swift; sourceTree = "<group>"; };
 		078A0768203B3B3800565C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07C0DCEE203BBEC900272013 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		07C0DCF0203BDB3700272013 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		07C0DCF2203BE13400272013 /* FirstViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewTableViewCell.swift; sourceTree = "<group>"; };
+		07C0DCF4203BF99E00272013 /* FirstViewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewDetailViewController.swift; sourceTree = "<group>"; };
+		07C0DCFA203C1F0A00272013 /* BeerSalery-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeerSalery-Bridging-Header.h"; sourceTree = "<group>"; };
+		07C0DCFB203C1F0B00272013 /* DotActivityIndicatorParms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotActivityIndicatorParms.m; sourceTree = "<group>"; };
+		07C0DCFC203C1F0B00272013 /* DotActivityIndicatorParms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotActivityIndicatorParms.h; sourceTree = "<group>"; };
+		07C0DCFD203C1F0C00272013 /* DotActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotActivityIndicatorView.m; sourceTree = "<group>"; };
+		07C0DCFE203C1F0C00272013 /* DotActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotActivityIndicatorView.h; sourceTree = "<group>"; };
+		07C0DD01203C322A00272013 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		10750827AA41ECDE236D8B69 /* Pods-BeerSalery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerSalery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerSalery/Pods-BeerSalery.debug.xcconfig"; sourceTree = "<group>"; };
+		BA7958F3970398E5FA466AF8 /* Pods-BeerSalery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerSalery.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerSalery/Pods-BeerSalery.release.xcconfig"; sourceTree = "<group>"; };
+		DCF90ECE7EA4CFE1A47C1707 /* Pods_BeerSalery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerSalery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC02740587DC88DFE0F7221 /* Pods_BeerSalery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +105,8 @@
 				078A075A203B3B3800565C22 /* BeerSaleryTests */,
 				078A0765203B3B3800565C22 /* BeerSaleryUITests */,
 				078A0742203B3B3700565C22 /* Products */,
+				0991BE1AD22DCAEF406B3287 /* Pods */,
+				7AD6B978E050DB5370347912 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +125,21 @@
 			children = (
 				078A0744203B3B3700565C22 /* AppDelegate.swift */,
 				078A0746203B3B3700565C22 /* FirstViewController.swift */,
+				07C0DCF2203BE13400272013 /* FirstViewTableViewCell.swift */,
+				07C0DCF4203BF99E00272013 /* FirstViewDetailViewController.swift */,
 				078A0748203B3B3800565C22 /* SecondViewController.swift */,
 				078A074A203B3B3800565C22 /* Main.storyboard */,
 				078A074D203B3B3800565C22 /* Assets.xcassets */,
 				078A074F203B3B3800565C22 /* LaunchScreen.storyboard */,
 				078A0752203B3B3800565C22 /* Info.plist */,
+				07C0DCEE203BBEC900272013 /* Beer.swift */,
+				07C0DCF0203BDB3700272013 /* SwiftyJSON.swift */,
+				07C0DCFC203C1F0B00272013 /* DotActivityIndicatorParms.h */,
+				07C0DCFB203C1F0B00272013 /* DotActivityIndicatorParms.m */,
+				07C0DCFE203C1F0C00272013 /* DotActivityIndicatorView.h */,
+				07C0DCFD203C1F0C00272013 /* DotActivityIndicatorView.m */,
+				07C0DCFA203C1F0A00272013 /* BeerSalery-Bridging-Header.h */,
+				07C0DD01203C322A00272013 /* SweetAlert.swift */,
 			);
 			path = BeerSalery;
 			sourceTree = "<group>";
@@ -128,6 +162,23 @@
 			path = BeerSaleryUITests;
 			sourceTree = "<group>";
 		};
+		0991BE1AD22DCAEF406B3287 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10750827AA41ECDE236D8B69 /* Pods-BeerSalery.debug.xcconfig */,
+				BA7958F3970398E5FA466AF8 /* Pods-BeerSalery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7AD6B978E050DB5370347912 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCF90ECE7EA4CFE1A47C1707 /* Pods_BeerSalery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 078A076B203B3B3800565C22 /* Build configuration list for PBXNativeTarget "BeerSalery" */;
 			buildPhases = (
+				4CBC1EDA1C9A010013CE408C /* [CP] Check Pods Manifest.lock */,
 				078A073D203B3B3700565C22 /* Sources */,
 				078A073E203B3B3700565C22 /* Frameworks */,
 				078A073F203B3B3700565C22 /* Resources */,
+				C8D09333062BC3C03730146C /* [CP] Embed Pods Frameworks */,
+				E132DF059569E5181F3F8767 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +250,7 @@
 				TargetAttributes = {
 					078A0740203B3B3700565C22 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					078A0756203B3B3800565C22 = {
@@ -257,14 +312,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4CBC1EDA1C9A010013CE408C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeerSalery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8D09333062BC3C03730146C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BeerSalery/Pods-BeerSalery-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeerSalery/Pods-BeerSalery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E132DF059569E5181F3F8767 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeerSalery/Pods-BeerSalery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		078A073D203B3B3700565C22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				078A0749203B3B3800565C22 /* SecondViewController.swift in Sources */,
+				07C0DD02203C322A00272013 /* SweetAlert.swift in Sources */,
 				078A0745203B3B3700565C22 /* AppDelegate.swift in Sources */,
+				07C0DCFF203C1F0C00272013 /* DotActivityIndicatorParms.m in Sources */,
+				07C0DD00203C1F0C00272013 /* DotActivityIndicatorView.m in Sources */,
+				07C0DCF5203BF99E00272013 /* FirstViewDetailViewController.swift in Sources */,
 				078A0747203B3B3700565C22 /* FirstViewController.swift in Sources */,
+				07C0DCF1203BDB3700272013 /* SwiftyJSON.swift in Sources */,
+				07C0DCEF203BBEC900272013 /* Beer.swift in Sources */,
+				07C0DCF3203BE13400272013 /* FirstViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,13 +546,18 @@
 		};
 		078A076C203B3B3800565C22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10750827AA41ECDE236D8B69 /* Pods-BeerSalery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BeerSalery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prince.hendrie.BeerSalery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeerSalery/BeerSalery-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -442,13 +565,17 @@
 		};
 		078A076D203B3B3800565C22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA7958F3970398E5FA466AF8 /* Pods-BeerSalery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BeerSalery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prince.hendrie.BeerSalery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeerSalery/BeerSalery-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
