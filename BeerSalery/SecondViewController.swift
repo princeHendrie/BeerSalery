@@ -187,7 +187,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             let totalworkingDaysSaleryMonth = (salery! * totalworkingDays)/workingDays
             
         
-            alert(message: "$SG \(self.formatNumber(amount: NSNumber(value:totalworkingDaysSaleryMonth)))", title: "Your Salery this Month", style: AlertStyle.success)
+            alert(message: "$SG \(self.formatNumber(amount: NSNumber(value: round(Double(totalworkingDaysSaleryMonth)))))", title: "Your Salery this Month", style: AlertStyle.success)
             
         }
     }
