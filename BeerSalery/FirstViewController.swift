@@ -15,6 +15,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     var listBeers = [Beer]()
     var page = 1
+    var modeFirstLoads: Bool = false
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -38,7 +39,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         indicatorView.dotParms = dotParms
         self.view.addSubview(indicatorView)
         
-        
+        modeFirstLoads = true
         // get list beer from api.
         callAPI(page: String(page))
         
@@ -72,7 +73,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastItem = listBeers.count - 1
         if indexPath.row == lastItem {
-            
+             modeFirstLoads = false
              callAPI(page: String(page + 1))
         }
     }
@@ -86,8 +87,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func callAPI(page:String) {
         
-        self.startIndicator()
-        
+        if modeFirstLoads {
+             self.startIndicator()
+        }
+       
         Alamofire.request("https://api.punkapi.com/v2/beers?page=\(page)", method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):

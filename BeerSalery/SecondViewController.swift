@@ -31,11 +31,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         date.delegate = self
         unpaidDay.delegate = self
         
-        let dateFormater = DateFormatter()
-        dateFormater.dateStyle = .short
-        dateFormater.timeStyle = .none
-        dateFormater.dateFormat = "MMMM/yyyy"
-        date.text = dateFormater.string(from: Date())
+        setDateMonth(selectedDate: selectedDate)
         
         unpaidDay.text = "0"
         
@@ -62,14 +58,31 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
        
     }
     
+    func setDateMonth(selectedDate: Date) {
+        let dateCurrent = selectedDate
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: dateCurrent)
+        let month = calendar.component(.month, from: dateCurrent)
+        
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = .short
+        dateFormater.timeStyle = .none
+        dateFormater.dateFormat = "MMM yyyy"
+        
+        let workingDays = countWorkingDays(start: getFirstDateinMonth(month:month, year:year, dateCurrent: dateCurrent) as NSDate, totalDay: getCountDaysinMonth(calendar: calendar, month: month, year: year, dateCurrent: dateCurrent))
+        
+        date.text = "\(dateFormater.string(from: selectedDate)) (total \(workingDays) working days in \(dateFormater.string(from: selectedDate)))"
+    }
+    
     @objc func donePress(){
         let dateFormater = DateFormatter()
         dateFormater.dateStyle = .short
         dateFormater.timeStyle = .none
-        dateFormater.dateFormat = "MMMM yyyy"
+        dateFormater.dateFormat = "MMM yyyy"
         
         selectedDate = monthPicker.date
-        date.text = dateFormater.string(from: monthPicker.date)
+        setDateMonth(selectedDate: selectedDate)
+        
         self.view.endEditing(true)
     }
     
@@ -171,9 +184,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             let unpaidDay:Int? = Int(unpaidDay)
             
             let totalworkingDays = (workingDays - unpaidDay!)
-            let totalworkingDaysSaleryWeek = salery!/52
-            let totalworkingDaysSaleryDay = totalworkingDaysSaleryWeek/5
-            let totalworkingDaysSaleryMonth = totalworkingDays * totalworkingDaysSaleryDay
+            let totalworkingDaysSaleryMonth = (salery! * totalworkingDays)/workingDays
             
         
             alert(message: "$SG \(self.formatNumber(amount: NSNumber(value:totalworkingDaysSaleryMonth)))", title: "Your Salery this Month", style: AlertStyle.success)
