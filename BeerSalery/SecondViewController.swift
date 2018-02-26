@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 
 class SecondViewController: UIViewController, UITextFieldDelegate {
@@ -19,6 +20,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     let monthPicker = UIDatePicker()
     
     var selectedDate:Date = Date()
+    
+    //let eventStore = EKEventStore()
+    //var calendars: [EKCalendar] = [EKCalendar]()
+    var calendar: [EKCalendar] = [EKCalendar]()
+    var events: [EKEvent]?
+    
+    var localHolliday: Int = 0
     
     @IBOutlet weak var calculateBtn: UIButton!
     let greenColor = UIColor(red: 96/255, green: 186/255, blue: 157/255, alpha: 1)
@@ -58,6 +66,68 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
        
     }
     
+    
+    func checkPermission(month: Int, year: Int, totalDay: Int) {
+        switch EKEventStore.authorizationStatus(for: .event) {
+        case .authorized:
+            self.loadData(month: month, year: year, totalDay: totalDay)
+        case .notDetermined:
+            let eventStore = EKEventStore()
+            eventStore.requestAccess(to: .event, completion: { (isAllowed, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }else{
+                    if isAllowed {
+                        self.loadData(month: month, year: year, totalDay: totalDay)
+                    }
+                }
+            })
+        case .restricted, .denied:
+            print("...");
+        }
+    }
+    
+    func loadData(month: Int, year: Int, totalDay: Int) {
+        
+        // Create a date formatter instance to use for converting a string to a date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
+        
+        // Create start and end date NSDate instances to build a predicate for which events to select
+        let startDate = dateFormatter.date(from: "\(year)-\(month)-01") //"2016-01-01"
+        let endDate = dateFormatter.date(from: "\(year)-\(month)-\(totalDay)") //"2016-12-31"
+    
+        
+        if let startDate = startDate, let endDate = endDate {
+            let eventStore = EKEventStore()
+            
+            // Use an event store instance to create and properly configure an NSPredicate
+            let eventsPredicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: calendar)
+            
+            
+            
+             // Use the configured NSPredicate to find and return events in the store that match
+             self.events = eventStore.events(matching: eventsPredicate).sorted(){
+             (e1: EKEvent, e2: EKEvent) -> Bool in
+             return e1.startDate.compare(e2.startDate) == ComparisonResult.orderedAscending
+             }
+            
+
+            localHolliday = 0
+            for item in self.events! {
+                if item.calendar.type.rawValue == 3 {
+                    localHolliday = localHolliday + 1
+                }
+            }
+           
+            
+        }
+       
+        
+        //print("\(localHolliday)")
+    }
+    
     func setDateMonth(selectedDate: Date) {
         let dateCurrent = selectedDate
         let calendar = Calendar.current
@@ -69,10 +139,16 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         dateFormater.timeStyle = .none
         dateFormater.dateFormat = "MMM yyyy"
         
-        let workingDays = countWorkingDays(start: getFirstDateinMonth(month:month, year:year, dateCurrent: dateCurrent) as NSDate, totalDay: getCountDaysinMonth(calendar: calendar, month: month, year: year, dateCurrent: dateCurrent))
+        let totalDay = getCountDaysinMonth(calendar: calendar, month: month, year: year, dateCurrent: dateCurrent)
         
-        date.text = "\(dateFormater.string(from: selectedDate)) (total \(workingDays) working days in \(dateFormater.string(from: selectedDate)))"
+        let workingDays = countWorkingDays(start: getFirstDateinMonth(month:month, year:year, dateCurrent: dateCurrent) as NSDate, totalDay: totalDay)
+        
+        checkPermission(month: month, year: year, totalDay: totalDay)
+        
+        date.text = "\(dateFormater.string(from: selectedDate)) (total \(workingDays-localHolliday) working days in \(dateFormater.string(from: selectedDate)))"
     }
+    
+    
     
     @objc func donePress(){
         let dateFormater = DateFormatter()
@@ -82,6 +158,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         
         selectedDate = monthPicker.date
         setDateMonth(selectedDate: selectedDate)
+        
         
         self.view.endEditing(true)
     }
@@ -174,17 +251,18 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         let workingDays = countWorkingDays(start: getFirstDateinMonth(month:month, year:year, dateCurrent: dateCurrent) as NSDate, totalDay: getCountDaysinMonth(calendar: calendar, month: month, year: year, dateCurrent: dateCurrent))
         
         // validasi login
-        let error: String = validasi(salery: latestSalery, unpaidDay: unpaidDay, workingDays: workingDays)
+        let error: String = validasi(salery: latestSalery, unpaidDay: unpaidDay, workingDays: workingDays-localHolliday)
         if(error.count > 0){
             alert(message: error, title: "Warning", style: AlertStyle.warning)
         }else{
             
             
+            
             let salery:Int? = Int(latestSalery)
             let unpaidDay:Int? = Int(unpaidDay)
             
-            let totalworkingDays = (workingDays - unpaidDay!)
-            let totalworkingDaysSaleryMonth = (salery! * totalworkingDays)/workingDays
+            let totalworkingDays = (workingDays - unpaidDay! - localHolliday)
+            let totalworkingDaysSaleryMonth = (salery! * totalworkingDays)/(workingDays-localHolliday)
             
         
             alert(message: "$SG \(self.formatNumber(amount: NSNumber(value: round(Double(totalworkingDaysSaleryMonth)))))", title: "Your Salery this Month", style: AlertStyle.success)
