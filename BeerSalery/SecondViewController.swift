@@ -13,6 +13,7 @@ import EventKit
 class SecondViewController: UIViewController, UITextFieldDelegate {
     
     
+    @IBOutlet weak var resultHolidays: UITextView!
     @IBOutlet weak var salary: UITextField!
     @IBOutlet weak var date: UITextField!
     @IBOutlet weak var unpaidDay: UITextField!
@@ -20,6 +21,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     let monthPicker = UIDatePicker()
     
     var selectedDate:Date = Date()
+    
+    var resultHoliday: String = ""
     
     //let eventStore = EKEventStore()
     //var calendars: [EKCalendar] = [EKCalendar]()
@@ -115,17 +118,27 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             
 
             localHolliday = 0
+            resultHoliday = ""
+            resultHoliday = "There are an holiday in this month : \n"
+            var holiday:Bool = false
             for item in self.events! {
                 if item.calendar.type.rawValue == 3 {
                     localHolliday = localHolliday + 1
+                   holiday = true
+                   resultHoliday = resultHoliday + item.title + "\n"
                 }
             }
            
+            if holiday == true {
+                self.resultHolidays.text = resultHoliday
+            }else{
+                self.resultHolidays.text = "There are no holiday in this month."
+            }
             
         }
        
         
-        //print("\(localHolliday)")
+        //print("\(self.events!)")
     }
     
     func setDateMonth(selectedDate: Date) {

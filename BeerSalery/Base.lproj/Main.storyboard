@@ -331,13 +331,21 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1YR-hI-c0X">
+                                <rect key="frame" x="16" y="317" width="343" height="280"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1YR-hI-c0X" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="3JC-HN-VAL"/>
                             <constraint firstItem="j3R-0t-qU3" firstAttribute="top" secondItem="jIq-GG-q5e" secondAttribute="bottom" id="7fl-RT-bAk"/>
                             <constraint firstItem="vtj-ER-3Za" firstAttribute="top" secondItem="BDe-DD-pIJ" secondAttribute="bottom" constant="28" id="8KH-O3-4rn"/>
                             <constraint firstItem="lHV-hZ-umt" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="9nB-iW-Adg"/>
                             <constraint firstItem="BDe-DD-pIJ" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="JCQ-Bn-XiS"/>
+                            <constraint firstItem="wFb-kD-IqU" firstAttribute="top" secondItem="1YR-hI-c0X" secondAttribute="bottom" constant="21" id="LNz-EZ-wIs"/>
                             <constraint firstItem="BDe-DD-pIJ" firstAttribute="top" secondItem="zdR-Fq-wEu" secondAttribute="bottom" constant="15" id="N5Q-om-EP6"/>
                             <constraint firstItem="jIq-GG-q5e" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="Owj-8g-iLU"/>
                             <constraint firstItem="BDe-DD-pIJ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="Rqh-0d-UxT"/>
@@ -348,9 +356,11 @@
                             <constraint firstItem="vtj-ER-3Za" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="fdN-gh-F5q"/>
                             <constraint firstItem="zdR-Fq-wEu" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="g0t-jg-zaU"/>
                             <constraint firstItem="zdR-Fq-wEu" firstAttribute="top" secondItem="lHV-hZ-umt" secondAttribute="bottom" constant="15" id="mTu-qT-hfU"/>
+                            <constraint firstItem="1YR-hI-c0X" firstAttribute="top" secondItem="vtj-ER-3Za" secondAttribute="bottom" constant="34" id="oNb-aw-xbi"/>
                             <constraint firstItem="j3R-0t-qU3" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="pgo-WA-LJQ"/>
                             <constraint firstItem="lHV-hZ-umt" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="rDx-rD-Zx8"/>
                             <constraint firstItem="lHV-hZ-umt" firstAttribute="top" secondItem="j3R-0t-qU3" secondAttribute="bottom" constant="31" id="vQF-Yp-5F3"/>
+                            <constraint firstItem="1YR-hI-c0X" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="z1F-PO-yeA"/>
                             <constraint firstItem="vtj-ER-3Za" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="zZS-gZ-bNh"/>
                         </constraints>
                     </view>
@@ -358,6 +368,7 @@
                     <connections>
                         <outlet property="calculateBtn" destination="vtj-ER-3Za" id="ldw-YL-NRW"/>
                         <outlet property="date" destination="zdR-Fq-wEu" id="JJw-UH-0aB"/>
+                        <outlet property="resultHolidays" destination="1YR-hI-c0X" id="44Y-Ty-L7T"/>
                         <outlet property="salary" destination="lHV-hZ-umt" id="cgt-ur-aBm"/>
                         <outlet property="unpaidDay" destination="BDe-DD-pIJ" id="Jly-KX-RZB"/>
                     </connections>
